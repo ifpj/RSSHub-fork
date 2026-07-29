@@ -18,7 +18,7 @@ jobs:
         runs-on: ubuntu-latest
         timeout-minutes: 10
         steps:
-            - name: Sync master with upstream
+            - name: Sync master with upstream (force)
               env:
                   GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-              run: gh repo sync "$GITHUB_REPOSITORY" --branch master
+              run: gh repo sync "$GITHUB_REPOSITORY" --branch master --force
